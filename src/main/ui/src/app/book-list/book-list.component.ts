@@ -23,11 +23,15 @@ export class BookListComponent {
 
   setAsRead = (rowIndex: number) => {
     console.log(rowIndex);
-    this.bookService.setAsRead(rowIndex).subscribe(result => this.goToBookList());
+    this.bookService.setAsRead(rowIndex).subscribe(result => this.reloadPage());
   }
 
   goToBookList() {
     this.router.navigate(['/books']);
+  }
+
+  reloadPage(){
+    window.location.reload()
   }
 
   ngOnInit(): void {
