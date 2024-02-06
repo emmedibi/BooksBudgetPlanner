@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../book.model';
 import { BookService } from '../services/book.service';
 import { DatasharingService } from '../services/datasharing.service';
+import { NotifyService } from '../services/notify.service';
 
 @Component({
   selector: 'app-book-budget-dashboard',
@@ -17,7 +18,7 @@ export class BookBudgetDashboardComponent{
   underBudgetThresholdMessage: string ="";
 
 
-  constructor(private dataSharingService: DatasharingService){
+  constructor(private dataSharingService: DatasharingService, private notifyService: NotifyService){
   }
 
   ngOnInit(): void {
@@ -40,7 +41,9 @@ export class BookBudgetDashboardComponent{
       }
       if(this.budget <=0){
         this.budgetThreshold="#c20018";
-        this.underBudgetThresholdMessage="You have no more budget. Read some books you already have";
+        this.notifyService.showWaring("You have NO MORE budget for new books!", "WARNING");
+      } else {
+        this.notifyService.showSuccess("Your budget is more than 0!", "CONGRATS!");
       }
     });
     

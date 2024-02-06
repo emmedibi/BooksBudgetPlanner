@@ -8,9 +8,11 @@
             id="title" 
             name="title" 
             placeholder="Enter book's title"
-            required #title="ngModel">
+            required
+            #title="ngModel">
         </div>
         <div [hidden]="!title.pristine" class="alert alert-danger">Title is required</div>
+        <br>
         <div class="form-group">
           <label for="author">Author</label>
           <input type="text" [(ngModel)]="book.author" 
@@ -18,18 +20,22 @@
             id="author" 
             name="author" 
             placeholder="Enter book's author"
-            required #author="ngModel">
+            required
+            #author="ngModel">
           <div [hidden]="!author.pristine" class="alert alert-danger">Author is required</div>
         </div>
+        <br>
           <div class="form-group">
-            <label for="isBoughtBeforeRegisterOnTheApp">Is Bought before the registration on the app?</label>
+            <label for="isBoughtBeforeRegisterOnTheApp">Did you buy the book before the registration on the app?</label>
+            <br>
             <br>
             <input type="radio" id ="yesChoice" [(ngModel)] ="book.boughtBeforeRegisterOnTheApp" [value]=true name="isBoughtBeforeRegisterOnTheApp"  >
-            <label for="boughtBeforeRegisterOnTheApp">Yes</label>
+            <label class="answare" for="boughtBeforeRegisterOnTheApp">Yes</label>
             <br>
             <input type="radio" id ="noChoice"  [(ngModel)] ="book.boughtBeforeRegisterOnTheApp" [value]=false name="isBoughtBeforeRegisterOnTheApp">
-            <label for="boughtBeforeRegisterOnTheApp">No</label>
+            <label class="answare" for="boughtBeforeRegisterOnTheApp">No</label>
           </div>
+          <br>
           <div class="form-group">
             <label for="price">Price</label>
             <input type="number" [(ngModel)]="book.price" 
@@ -37,8 +43,10 @@
               id="price" 
               name="price" 
               placeholder="Enter book's price"
-              required #price="ngModel">
+              required
+              #price="ngModel">
           </div>
+          <div [hidden]="!price.pristine" class="alert alert-danger">Price is required</div>
           <br>
         <button type="submit" 
           class="btn btn-info">Submit</button>

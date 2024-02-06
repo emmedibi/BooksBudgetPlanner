@@ -12,6 +12,8 @@ import { BookListComponent } from "./book-list/book-list.component";
 import { DatasharingService } from "./services/datasharing.service";
 import { BookService } from "./services/book.service";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
       RouterOutlet,
       RouterLink,
       RouterModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot()
     ],
     providers: [DatasharingService, BookService, provideAnimationsAsync('noop')],
     bootstrap: [AppComponent]
