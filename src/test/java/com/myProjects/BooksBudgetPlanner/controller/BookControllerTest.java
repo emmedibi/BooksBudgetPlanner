@@ -1,5 +1,6 @@
 package com.myProjects.BooksBudgetPlanner.controller;
 
+
 import com.myProjects.BooksBudgetPlanner.entity.Book;
 import com.myProjects.BooksBudgetPlanner.service.BookService;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class BookControllerTest {
-
     @Mock
     private BookService bookService;
 
@@ -24,7 +24,7 @@ public class BookControllerTest {
 
     @BeforeEach
     void setUp(){
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -67,5 +67,8 @@ public class BookControllerTest {
         verifyNoMoreInteractions(bookService);
 
     }
+
+
+
 
 }

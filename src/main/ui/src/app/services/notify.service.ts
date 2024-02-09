@@ -14,7 +14,7 @@ export class NotifyService {
   showError(message: string | undefined, title: string | undefined){
     this.toastr.error(message, title);
 } 
-  showWaring(message: string | undefined, title: string | undefined){
+  showWarning(message: string | undefined, title: string | undefined){
     this.toastr.warning(message, title);
   }
 }

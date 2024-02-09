@@ -41,7 +41,7 @@ export class BookBudgetDashboardComponent{
       }
       if(this.budget <=0){
         this.budgetThreshold="#c20018";
-        this.notifyService.showWaring("You have NO MORE budget for new books!", "WARNING");
+        this.notifyService.showWarning("You have NO MORE budget for new books!", "WARNING");
       } else {
         this.notifyService.showSuccess("Your budget is more than 0!", "CONGRATS!");
       }
